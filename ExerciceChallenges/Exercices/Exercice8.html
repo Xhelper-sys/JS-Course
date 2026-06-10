@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 8 Exercises - Objects
+    </title>
+  </head>
+  <body>
+    <script>
+      // 8a.
+      const product = {
+        name:'basketball',
+        price: 2095
+      };
+      console.log(product);
+      // 8b.
+      product.price += 500;
+      console.log(product);
+      // 8c.
+      product['delivery-time'] = '3 days';
+      console.log(product);
+      // 8d.
+      function comparePrice(product1, product2){
+        if (product1.price > product2.price){
+          return product2;
+        }
+        return product1;
+      };
+      const product1 = {
+        name: 'steak',
+        price: 299
+      };
+      const product2 = {
+        name: 'pasta',
+        price: 180
+      };
+      console.log(comparePrice(product1, product2));
+      // 8e.
+      const product3 = {
+        name: 'pasta',
+        price: 180
+      };
+      function isSameProduct(product1, product2){
+        if (product1.price === product2.price && product1.name === product2.name){
+          return true;
+        }
+        return false;
+      };
+      console.log(isSameProduct(product2, product1));
+      console.log(isSameProduct(product3, product2));
+      // 8f.
+      console.log('Good Morning'.toLocaleLowerCase());
+      // 8g.
+      console.log('test'.repeat(2));
+    </script>
+  </body>
+</html>

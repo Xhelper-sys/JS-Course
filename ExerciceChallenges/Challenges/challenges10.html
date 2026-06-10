@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Challenge 10
+    </title>
+  </head>
+  <style>
+    .button-gaming, .button-music, .button-tech {
+      background-color: rgb(230,230,230);
+      color: black;
+      border: none;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      border-radius: 6px;
+      margin-right: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .is-toggled {
+      background-color: black;
+      color:white;
+    }
+  </style>
+  <body>
+    <!-- 10g. -->
+    <button class="js-button-gaming button-gaming" onclick="
+      changeColor('gaming');
+    ">
+      Gaming
+    </button>
+    <button class="js-button-music button-music" onclick="
+      changeColor('music');
+    ">
+      Music
+    </button>
+    <button class="js-button-tech button-tech" onclick="
+      changeColor('tech');
+    ">
+      Tech
+    </button>
+    <script>
+      function changeColor(type){
+
+        const buttonGaming = document.querySelector('.button-gaming');
+        const buttonMusic = document.querySelector('.button-music');
+        const buttonTech = document.querySelector('.button-tech');
+
+        const verifClass = document.querySelector(`.button-${type}`).classList.contains('is-toggled');
+
+        if (buttonGaming.classList.contains('is-toggled')){
+            buttonGaming.classList.remove('is-toggled');
+        } else if (buttonMusic.classList.contains('is-toggled')){
+            buttonMusic.classList.remove('is-toggled');
+        } else if (buttonTech.classList.contains('is-toggled')){
+            buttonTech.classList.remove('is-toggled');
+        }
+
+        if (!verifClass) {
+          document.querySelector(`.button-${type}`).classList.add('is-toggled');
+        }
+      }
+    </script>
+  </body>
+</html>

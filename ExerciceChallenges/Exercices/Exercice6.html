@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 6 Exercises - Booleans and If-Statements
+    </title>
+  </head>
+  <body>
+    <script>
+      // 6a. 6b.
+      const hour = 5;
+      // 6c.
+      const name = 'Mustafa';
+
+      if (hour >= 6 && hour <= 12){
+        console.log(`Good morning ${name}!`);
+      } else if (hour >= 13 && hour <= 17){
+        console.log(`Good afternoon ${name}!`);
+      } else {
+        console.log(`Good night ${name}!`);
+      }
+
+      // 6d.
+      const age = 100;
+      // 6e.
+      const isHoliday = false;
+      if ((age <= 6 || 65 <= age) && !isHoliday){
+        console.log('Discount');
+      } else {
+        console.log('No discount');
+      }
+
+      
+      // 6f. 6h.
+      const randomNumber = Math.random();
+      let result = '';
+      if (randomNumber < 0.5) {
+        result = 'heads';
+      } else {
+        result = 'tails';
+      }
+
+      // 6i.
+      const guess = 'heads';
+      if (guess === result){
+        console.log('You win!');
+      } else {
+        console.log('You lose!');
+      }
+  
+      result = randomNumber < 0.5 ? 'heads' : 'tails';
+      result === guess ? console.log('You win!') : console.log('You lose!');
+      
+      
+
+    </script>
+  </body>
+</html>
