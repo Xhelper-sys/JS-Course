@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Challenge Exercises 11
+    </title>
+  </head>
+  <body>
+    <script>
+      // 11l.
+      function minMax(nums){
+        if (nums.length === 0){
+          return {min:null, max:null};
+        }
+        const minAndMax = {min: nums[0], max: nums[0]};
+        for (let i = 1; i < nums.length; i++){
+          if (nums[i] < minAndMax.min){
+            minAndMax.min = nums[i];
+          };
+          if (minAndMax.max < nums[i]){
+            minAndMax.max = nums[i];
+          }
+        }
+        return minAndMax;
+      }
+      console.log(minMax([1, -3, 5]));
+      console.log(minMax([-2,3,-5,7,10]));
+
+      // 11m.
+      console.log(minMax([]));
+      console.log(minMax([3]));
+
+      // 11n.
+      function countWords(words){
+        const numbreWords = {};
+
+        for (let i = 0; i < words.length; ++i){
+          if (numbreWords[words[i]]){
+            numbreWords[words[i]] += 1;
+          } else {
+            numbreWords[words[i]] = 1;
+          }
+        }
+        return numbreWords;
+      }
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+    </script>
+  </body>
+</html>
