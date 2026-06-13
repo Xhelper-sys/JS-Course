@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Exercice11 Part 2
+    </title>
+  </head>
+  <body>
+    <script>
+      // 11o.
+      const arrayOfString = ['hello', 'world', 'search', 'good'];
+      // const arrayOfString = ['hello', 'good'];
+      let searchWord = false
+      for (let i = 0 ; i < arrayOfString.length; i++){
+        if (arrayOfString[i] === 'search'){
+          searchWord = true;
+          console.log(i);
+          // 11p.
+          break;
+        }
+      }
+      if (!searchWord) {
+        console.log(-1);
+      }
+
+      function findIndex(array, word){
+        for (let i = 0; i < array.length; i++){
+          if (array[i] === word){
+            return i
+          }
+        }
+        return -1;
+      }
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+      // 11r.
+      // 11s.
+      // 11t.
+      // 11u.
+      function removeEgg(foods){
+        const copieFoods = foods.splice();
+        copieFoods.reverse();
+        cpt = 0;
+        const newArray = [];
+        for (let i = 0; i<copieFoods.length; i++){
+          if (foods[i] === 'egg'){
+            cpt++;
+            if (cpt < 3){
+              continue;
+            }
+          } 
+          newArray.push(copieFoods[i]);
+        }
+        return newArray.reverse();
+      }
+      const foodTable = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      console.log(foodTable);
+      console.log(removeEgg(foodTable));
+      console.log(foodTable)
+    </script>
+  </body>
+</html>
