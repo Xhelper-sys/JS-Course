@@ -6,32 +6,15 @@
     </title>
   </head>
   <body>
-    <button onclick="
-      const text = document.querySelector('.js-text-12e');
-      text.innerText = 'Added';
-      idTimeout ? clearTimeout(idTimeout) : 0;
-      idTimeout = setTimeout(function (){text.innerText = '';
-      },2000);
-
-      // 12g.
-
-    ">
+    <button class="js-button-12g">
       Add to cart
     </button>
 
     <p></p>
-    <button onclick="
-      messages++;
-      displayTitle();
-    ">
+    <button class="js-add-button">
       Add
     </button>
-    <button onclick="
-      if (messages > 0){
-        messages--;
-      }
-      displayTitle();
-    ">
+    <button class="js-remove-button">
       Remove
     </button>
     <p class="js-text-12e"></p>
@@ -41,6 +24,26 @@
 
       let idInterval;
       let run = true;
+
+      document.querySelector('.js-button-12g').addEventListener('click', ()=>{
+        const text = document.querySelector('.js-text-12e');
+        text.innerText = 'Added';
+        idTimeout ? clearTimeout(idTimeout) : 0;
+        idTimeout = setTimeout(function (){text.innerText = '';
+        },2000);
+      });
+
+      document.querySelector('.js-add-button').addEventListener('click',() => {
+        messages++;
+        displayTitle();
+      });
+
+      document.querySelector('.js-remove-button').addEventListener('click',() => {
+        if (messages > 0){
+          messages--;
+        }
+        displayTitle();
+      });
 
       // 12g.
       // 12h.
