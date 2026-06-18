@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Challenge Exercises 12
+    </title>
+  </head>
+  <body>
+    <button onclick="
+      const text = document.querySelector('.js-text-12e');
+      text.innerText = 'Added';
+      idTimeout ? clearTimeout(idTimeout) : 0;
+      idTimeout = setTimeout(function (){text.innerText = '';
+      },2000);
+
+      // 12g.
+
+    ">
+      Add to cart
+    </button>
+
+    <p></p>
+    <button onclick="
+      messages++;
+      displayTitle();
+    ">
+      Add
+    </button>
+    <button onclick="
+      if (messages > 0){
+        messages--;
+      }
+      displayTitle();
+    ">
+      Remove
+    </button>
+    <p class="js-text-12e"></p>
+    <script>
+      let idTimeout;
+      let messages = 2;
+
+      let idInterval;
+      let run = true;
+
+      // 12g.
+      // 12h.
+      idInterval = setInterval(function (){
+        document.title = `(${messages})New messages`
+      }, 1000);
+
+      // 12i.
+      function displayTitle(){
+        if (!run){
+          idInterval = setInterval(function (){
+            document.title = `(${messages})New messages`
+          }, 1000);
+          run = true;
+        } else if (messages === 0) {
+          if (idInterval){
+            clearInterval(idInterval);
+          }
+          document.title = 'App';
+          run = false
+        }
+      }
+    </script>
+  </body>
+</html>
